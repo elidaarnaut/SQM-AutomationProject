@@ -1,0 +1,19 @@
+config:
+  target: "https://magento.softwaretestingboard.com"
+  phases:
+    - duration: 600  # Duration of the test in seconds (10 minutes)
+      arrivalRate: 1000  # Start with 1000 users per second
+      rampTo: 10000  # Ramp up to 10,000 users per second
+  defaults:
+    headers:
+      Content-Type: "application/json"
+  http:
+    response:
+      max_duration: 2000  # Maximum response time of 2 seconds
+
+scenarios:
+  - flow:
+      - get:
+          url: "/"
+      - get:
+          url: "/about"
