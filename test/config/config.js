@@ -6,6 +6,9 @@ module.exports = {
         Email: 'proba@proba.ba',
         Password: 'pass123',
         ConfirmPassword: 'pass123',
+        InvalidEmail: 'invalidEmail',
+        InvalidPassord: 'p',
+        ConfirmInvalidPassword: 'p',
     },
 
     shippingDetails: {
