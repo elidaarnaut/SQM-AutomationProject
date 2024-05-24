@@ -1,0 +1,33 @@
+config:
+  target: "https://magento.softwaretestingboard.com"
+  phases:
+    - duration: 120 # Warm up period
+      arrivalRate: 100
+      rampTo: 2000
+      name: "Warming up"
+    - duration: 300 # Ramp up to peak load
+      arrivalRate: 2000
+      rampTo: 10000
+      name: "Ramping up"
+    - duration: 600 # Sustained peak load
+      arrivalRate: 10000
+      name: "Peak load"
+  thresholds:
+    http_req_duration: ["p(95)<2000"] # 95% of requests should be faster than 2000 milliseconds
+
+scenarios:
+  - flow:
+      - get:
+          url: "/"
+      - post:
+          url: "/customer/account/login/"
+          json:
+            Email: "user1@example.com"
+            Password: "Password123"
+      - get:
+          url: "/search?q=Josie+yoga+jacket"
+      - get:
+          url: "/add-to-cart"
+          json:
+            productId: "12345"
+            qty: 1
