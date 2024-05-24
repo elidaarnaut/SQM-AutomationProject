@@ -3,7 +3,7 @@ module.exports = {
     credentials: {
         FirstName: 'Enter Value',
         LastName: 'Enter Value',
-        Email: 'proba@proba.ba',
+        Email: 'proba1@proba.ba',
         Password: 'pass123',
         ConfirmPassword: 'pass123',
         InvalidEmail: 'invalidEmail',

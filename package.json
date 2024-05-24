@@ -3,9 +3,12 @@
     "@wdio/allure-reporter": "^8.36.1",
     "@wdio/cli": "^8.36.1",
     "@wdio/jasmine-framework": "^8.36.1",
-    "@wdio/local-runner": "^8.36.1"
+    "@wdio/local-runner": "^8.36.1",
+    "artillery": "^2.0.12"
   },
   "scripts": {
+    "performance_test": "artillery run ./test/performance_specs/login_load_test.yml",
     "wdio": "wdio run ./wdio.conf.js"
   }
+  
 }
